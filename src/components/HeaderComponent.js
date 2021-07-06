@@ -13,7 +13,7 @@ class Header extends Component{
         this.toggleModal = this.toggleModal.bind(this);
         this.toggleNav = this.toggleNav.bind(this);
         this.handleLogin=this.handleLogin.bind(this);
-      }
+    }
 
      
     render(){

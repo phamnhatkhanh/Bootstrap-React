@@ -36,15 +36,7 @@ class Main extends Component {
 
   render() {
     // wk2 Reat Router.
-    const HomePage = () => {
-      return(
-          <Home 
-              dish={this.props.dishes.filter((dish) => dish.featured)[0]}
-              promotion={this.props.promotions.filter((promo) => promo.featured)[0]}
-              leader={this.props.leaders.filter((leader) => leader.featured)[0]}
-          />
-      );
-    }
+
 
     const DishWithId = ({match}) => {
       return(
@@ -61,14 +53,14 @@ class Main extends Component {
         <TransitionGroup>
             <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
               <Switch location={this.props.location}>
-                  {/* <Route path='/home' >
+                  <Route path='/home' >
                     <Home 
-                            dish={this.props.dishes.filter((dish) => dish.featured)[0]}
-                            promotion={this.props.promotions.filter((promo) => promo.featured)[0]}
-                            leader={this.props.leaders.filter((leader) => leader.featured)[0]}
-                        />
-                  </Route> */}
-                  <Route path='/home' component={HomePage} />
+                      dish={this.props.dishes.filter((dish) => dish.featured)[0]}
+                      promotion={this.props.promotions.filter((promo) => promo.featured)[0]}
+                      leader={this.props.leaders.filter((leader) => leader.featured)[0]}
+                    />
+                  </Route>
+                  {/* <Route path='/home' component={HomePage} /> */}
                   <Route exact path='/aboutus' component={() => <About leaders={this.props.leaders} />} />
                   <Route exact path='/menu' component={() => <Menu dishes={this.props.dishes} />} />
                   <Route path='/menu/:dishId' component={DishWithId} />

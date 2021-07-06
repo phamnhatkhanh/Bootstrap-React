@@ -1,12 +1,22 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media,CardImg,CardText,CardTitle} from 'reactstrap';
 import { Link } from 'react-router-dom';
-
+import './About.css'
 function About(props) {
 
     const leaders = props.leaders.map((leader) => {
         return (
-            <Card>Leader {leader.name}</Card>
+            <Media className='item'>
+                
+                <CardImg src={leader.image} alt={leader.name} className='leader_image' />
+                <CardHeader className='leader_content'>
+                    <CardTitle><h2>{leader.name}</h2></CardTitle>
+                    <CardText>{leader.description}</CardText>
+                </CardHeader>
+                    
+            
+            </Media>
+            
         );
     });
 
